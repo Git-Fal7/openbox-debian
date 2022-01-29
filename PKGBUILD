@@ -38,13 +38,8 @@ md5sums=('b72794996c6a3ad94634727b95f9d204'
 prepare() {
     cd "${_pkgname}-${pkgver}"
     
-    for p in ../debian/patches/*; do
-     if [ "${p##*.}" = "patch" ]; then
-      msg "Applying ${p}"
-      patch -p1 -i "../debian/patches/${p}"
-     fi
-    done
-    
+    ls ../debian/patches/ | grep ".patch$" | while read p; do msg "Applying ${p}"; patch -p1 -i "../debian/patches/${p}"; done
+
 }
 
 build() {
