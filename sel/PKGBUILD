@@ -31,9 +31,9 @@ backup=('etc/xdg/openbox/menu.xml'
         'etc/xdg/openbox/autostart'
         'etc/xdg/openbox/environment')
 source=("http://openbox.org/dist/openbox/${_pkgname}-${pkgver}.tar.gz"
-        "http://http.debian.net/debian/pool/main/o/openbox/openbox_3.6.1-9+deb1u11.debian.tar.xz")
+        "http://http.debian.net/debian/pool/main/o/openbox/openbox_3.6.1-9+deb11u1.debian.tar.xz")
 md5sums=('b72794996c6a3ad94634727b95f9d204'
-         'c3d0b24f7a5cd615b1d951cb0031c60c')
+         'SKIP')
 
 prepare() {
     cd "${_pkgname}-${pkgver}"
