@@ -38,7 +38,7 @@ md5sums=('b72794996c6a3ad94634727b95f9d204'
 prepare() {
     cd "${_pkgname}-${pkgver}"
     
-    ls ../debian/patches/ | grep ".patch$" | while read p; do msg "Applying ${p}"; patch -p1 -i "../debian/patches/${p}"; done
+    ls ../debian/patches/ | grep ".patch$" | while read p; do if ! [[ $p == 03* ]]; then msg "Applying ${p}"; patch -p1 -i "../debian/patches/${p}"; fi; done
 
 }
 
