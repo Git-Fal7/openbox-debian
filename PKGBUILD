@@ -39,9 +39,9 @@ prepare() {
     cd "${_pkgname}-${pkgver}"
     
     for p in ../debian/patches/*; do
-     if [ "${f##*.}" = "patch" ]; then
-      msg "Applying ${f}"
-      patch -p1 -i "../debian/patches/${f}"
+     if [ "${p##*.}" = "patch" ]; then
+      msg "Applying ${p}"
+      patch -p1 -i "../debian/patches/${p}"
      fi
     done
     
